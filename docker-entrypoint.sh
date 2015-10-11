@@ -7,7 +7,7 @@ chruby ruby
 
 gem install bundler
 
-bundle install
+bundle install --without=development,test
 bundle exec rake db:migrate
 
 if [[ $/ != 0 ]]; then

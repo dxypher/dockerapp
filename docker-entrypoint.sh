@@ -15,6 +15,7 @@ if [[ $/ != 0 ]]; then
   echo "== Failed to migrate. Running setup first."
   echo
   bundle exec rake db:setup && \
+  bundle exec rake db:reset && \
   bundle exec rake db:migrate
 fi
 

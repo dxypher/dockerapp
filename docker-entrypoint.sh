@@ -1,4 +1,4 @@
-git clone --depth 1 https://github.com/dxypher/dockerapp.git
+git clone --depth 1 https://github.com/dxypher/dockerapp.git app
 
 cd app
 
@@ -18,4 +18,6 @@ if [[ $/ != 0 ]]; then
   bundle exec rake db:migrate
 fi
 
-bunlde exec rails server
+export SECRET_KEY_BASE=$(rake secret)
+
+bundle exec rails server -b 0.0.0.0

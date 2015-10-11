@@ -10,12 +10,11 @@ gem install bundler
 bundle install --without=development,test
 bundle exec rake db:migrate
 
-if [[ $/ != 0 ]]; then
+if [[ $? != 0 ]]; then
   echo
   echo "== Failed to migrate. Running setup first."
   echo
   bundle exec rake db:setup && \
-  bundle exec rake db:reset && \
   bundle exec rake db:migrate
 fi
 

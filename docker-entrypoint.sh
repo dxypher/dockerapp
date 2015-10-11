@@ -20,7 +20,7 @@ fi
 
 export SECRET_KEY_BASE=$(rake secret)
 
-sudo rm /etc/nginx/sites-enable/*
+sudo rm /etc/nginx/sites-enabled/*
 sudo ln -s /home/app/nginx.conf /etc/nginx/sites-enabled/app.conf
 
 sudo service nginx start
